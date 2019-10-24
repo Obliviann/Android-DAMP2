@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DAMP2</string>
+    <string name="count_button">Counter</string>
+    <string name="counter_value">0</string>
+</resources>
