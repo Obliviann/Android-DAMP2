@@ -1,5 +1,6 @@
 package com.liv.damp2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,18 +25,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //they have implicit type specification
+        val countButton = findViewById<Button>(R.id.count_button)
         val textView = findViewById<TextView>(R.id.value_textView) //TODO: as textView?
-        val button = findViewById<Button>(R.id.count_button)
         var counter = 0
 
     //context obj - allows you to communicate with and get info about the current state of the android OS
     //An Activity is a subclass of Context
-        button.setOnClickListener{
+        countButton.setOnClickListener{
             counter = counter+1
             var string = counter.toString()
             //.text property is equivalent to getText() or setText() in Java
             textView.text = string
             println("the value is: $string")
+        }
+
+        val changeAct2Btn = findViewById<Button>(R.id.a02_button)
+
+        changeAct2Btn.setOnClickListener{
+            //To change to another activity
+            startActivity(Intent(this@MainActivity, LinearLayoutAct::class.java))
         }
     }
 }
